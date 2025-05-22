@@ -222,7 +222,7 @@ async def id_command(client, message: Message):
         f"👉 `/add_channel {chat_id}`"
     )
 
-bot.on_message(filters.command("auth_users") & filters.create(owner_filter))
+bot.on_message(filters.command("auth_users") & filters.private)
 async def show_auth_users(client: Client, message: Message):
     await message.reply(f"Authorized users: {authorized_users}")
 
@@ -230,7 +230,7 @@ async def show_auth_users(client: Client, message: Message):
 import datetime
 from datetime import datetime, timedelta
 
-@bot.on_message(filters.command("add_auth") & filters.create(owner_filter))
+@bot.on_message(filters.command("add_auth") & filters.private)
 async def add_auth_user(client: Client, message: Message):
     global authorized_users
     try:
@@ -313,7 +313,7 @@ async def show_users(client, message: Message):
     else:
         await message.reply_text("ℹ️ No users found in the subscription data.")
 '''
-@bot.on_message(filters.command("remove_auth") & filters.create(owner_filter))
+@bot.on_message(filters.command("remove_auth") & filters.private)
 async def remove_auth_user(client: Client, message: Message):
     global authorized_users
     try:
@@ -875,4 +875,3 @@ async def account_login(bot: Client, m: Message):
 bot.run()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
                                                             
                      
-                    
